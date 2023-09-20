@@ -8,14 +8,14 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
+- MacBook Air
 - Various Command-Line Tools
 - Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
 
 <h2>Operating Systems Used </h2>
 
-- Windows 10 (21H2)
+- Windows 10 Pro
 - Ubuntu Server 20.04
 
 <h1>Step-by-Step Guide</h1>
