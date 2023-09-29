@@ -9,6 +9,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 - Microsoft Azure (Virtual Machines)
 - MacBook Air
+- RD Client (Remote Desktop App)
 - Various Command-Line Tools
 - Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
@@ -36,7 +37,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>2.1 Observe ICMP Traffic</h2>
 
-- Use Remote Desktop to connect to your Windows 10 Virtual Machine.
+- Use RD Client to connect to your Windows 10 Virtual Machine.
 - Install Wireshark within your Windows 10 VM.
 - Open Wireshark and apply a filter for ICMP traffic.
 - Retrieve the private IP address of the Ubuntu VM and ping it from within the Windows 10 VM.
