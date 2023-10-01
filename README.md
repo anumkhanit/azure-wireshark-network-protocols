@@ -80,4 +80,4 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 -----
 <h1>Conclusion</h1>
-In conclusion, we've gained a deeper understanding of various network protocols, security measures, and the influence of geographic locations on online experiences. This journey highlights the significance of vigilance in monitoring and managing network traffic, recognizing its pivotal role in today's digital world.
+In conclusion, we've gained a deeper understanding of various network protocols, security measures, and the influence of geographic locations on online experiences. This journey highlights the significance of vigilance in monitoring and managing network traffic, recognizing its pivotal role in today's digital world. For more information about Network Security, check out Microsoft documentation through this link: https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
