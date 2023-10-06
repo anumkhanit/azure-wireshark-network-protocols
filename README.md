@@ -8,8 +8,8 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines)
-- MacBook Air
-- RD Client (Remote Desktop App)
+- macOS
+- RD Client (Remote Desktop)
 - Various Command-Line Tools
 - Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
@@ -73,8 +73,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>2.5 Observe RDP Traffic</h2>
 
 - Filter for RDP traffic in Wireshark (tcp.port == 3389).
-- Observe the constant stream of traffic. Discuss why RDP traffic is continuous compared to other activities.
-- Answer: RDP provides a continuous live stream from one computer to another, resulting in constant traffic transmission.
+- Observe the constant stream of traffic. Discuss why RDP traffic is continuous compared to other activities. Answer: RDP provides a continuous live stream from one computer to another, resulting in constant traffic transmission.
 
 </br>
 
