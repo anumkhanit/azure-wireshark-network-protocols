@@ -73,7 +73,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>2.5 Observe RDP Traffic</h2>
 
 - Filter for RDP traffic in Wireshark (tcp.port == 3389).
-- Observe the constant stream of traffic. Discuss why RDP traffic is continuous compared to other activities. Answer: RDP provides a continuous live stream from one computer to another, resulting in constant traffic transmission.
+- Observe the constant stream of traffic. Why is the RDP traffic is continuous compared to other activities? Answer: RDP provides a continuous live stream from one computer to another, resulting in constant traffic transmission.
 
 </br>
 
