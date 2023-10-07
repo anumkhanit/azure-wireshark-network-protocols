@@ -24,8 +24,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h1>Part 1: Set Up Resources</h1>
 
 - Create a Resource Group.
-- Create a Windows 10 Virtual Machine (VM) and assign it to the previously created Resource Group.
-- Allow the VM to create a new Virtual Network (Vnet) and Subnet during setup.
+- Create a Windows 10 Virtual Machine (VM) and assign it to the previously created Resource Group. Allow the VM to create a new Virtual Network (Vnet) and Subnet during setup.
 - Create a Linux (Ubuntu) VM and assign it to the same Resource Group and Vnet.
 - Observe the Virtual Network within Network Watcher.
 
