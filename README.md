@@ -36,17 +36,22 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>2.1 Observe ICMP Traffic</h2>
 
-- Use RD Client to connect to your Windows 10 Virtual Machine.
-- Install Wireshark within your Windows 10 VM.
-- Open Wireshark and apply a filter for ICMP traffic.
-- Retrieve the private IP address of the Ubuntu VM and ping it from within the Windows 10 VM.
-- Observe ping requests and replies in Wireshark.
-- Ping a public website (e.g., www.google.com) from the Windows 10 VM and monitor the traffic in Wireshark.
-- Start a continuous ping from your Windows 10 VM to your Ubuntu VM.
-- Disable incoming (inbound) ICMP traffic in the Network Security Group of your Ubuntu VM.
-- Observe the ICMP traffic in Wireshark and the command line Ping activity on the Windows 10 VM.
-- Re-enable ICMP traffic in the Network Security Group of your Ubuntu VM.
-- Observe the ICMP traffic in Wireshark and verify that the ping starts working.
+- Use **RD Client** to connect to your **Windows 10 Virtual Machine (VM)**.
+- Install **Wireshark** within your **Windows 10 VM**.
+- Open **Wireshark** and apply a filter for **ICMP** traffic.
+- Retrieve the **private IP address** of the **Ubuntu VM** and ping it from within the **Windows 10 VM**.
+    - Ex = ping 10.0.0.5
+- Observe ping requests and replies in **Wireshark**.
+- Ping a public website (e.g., www.google.com) from the **Windows 10 VM** and monitor the traffic in **Wireshark**.
+    - Ex = ping www.google.com
+- Start a continuous ping from your **Windows 10 VM** to your **Ubuntu VM**.
+    - Ex = ping 10.0.0.5 or www.google.com -t
+- Disable incoming (inbound) ICMP traffic in the **Network Security Group** of your **Ubuntu VM** at **Microsoft Azure**.
+    - Ex = Deny ICMP with custom name: DENY_ICMP_PING_FROM_ANYWHERE
+- Observe the ICMP traffic in **Wireshark** and the command line Ping activity on the **Windows 10 VM**.
+- Re-enable ICMP traffic in the **Network Security Group** of your **Ubuntu VM**.
+    - Ex = Allow ICMP with the same custom name you've created previously.
+- Observe the ICMP traffic in **Wireshark** and verify that the ping starts working.
 - Stop the ping activity.
 
 <h2>2.2 Observe SSH Traffic</h2>
