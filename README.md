@@ -53,14 +53,14 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
     - Ex = Allow ICMP with the same custom name you've created previously.
 - Observe the ICMP traffic in **Wireshark** and verify that the ping starts working.
 - Stop the ping activity.
-    - Use keys (Cntl^ + C)
+    - Use keys [Cntl^ + C]
 
 <h2>2.2 Observe SSH Traffic</h2>
 
-- Filter for SSH traffic in Wireshark.
-- SSH into your Ubuntu Virtual Machine from your Windows 10 VM using its private IP address.
-- Observe SSH traffic in Wireshark while typing commands.
-- Exit the SSH connection by typing 'exit' and pressing [Enter].
+- Filter for **SSH** traffic in **Wireshark**.
+- **SSH** into your **Ubuntu VM** from your **Windows 10 VM** using its private IP address.
+- Observe **SSH** traffic in **Wireshark** while typing commands.
+- Exit the **SSH** connection by typing 'exit' and pressing [Enter].
 
 
 <h2>2.3 Observe DHCP Traffic</h2>
