@@ -24,8 +24,8 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h1>Part 1: Set Up Resources</h1>
 
 - Create a Resource Group.
-- Create a Windows 10 Virtual Machine (VM) and assign it to the previously created Resource Group. Allow the VM to create a new Virtual Network (Vnet) and Subnet during setup.
-- Create a Linux (Ubuntu) VM and assign it to the same Resource Group and Vnet.
+- Create a **Windows 10 Virtual Machine (VM)** (with RDP Port) and assign it to the previously created Resource Group. Allow the VM to create a new Virtual Network (Vnet) and Subnet during setup.
+- Create a (Linux) **Ubuntu VM** (with SSH Port) and assign it to the same Resource Group and Vnet.
 - Observe the Virtual Network within Network Watcher.
 
 </br>
@@ -53,6 +53,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
     - Ex = Allow ICMP with the same custom name you've created previously.
 - Observe the ICMP traffic in **Wireshark** and verify that the ping starts working.
 - Stop the ping activity.
+    - Use keys (Cntl^ + C)
 
 <h2>2.2 Observe SSH Traffic</h2>
 
