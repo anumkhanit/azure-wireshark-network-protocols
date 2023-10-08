@@ -42,7 +42,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Retrieve the **private IP address** of the **Ubuntu VM** and ping it from within the **Windows 10 VM**.
     - Ex = ping 10.0.0.5
 - Observe ping requests and replies in **Wireshark**.
-- Ping a public website (e.g., www.google.com) from the **Windows 10 VM** and monitor the traffic in **Wireshark**.
+- Ping a public website from the **Windows 10 VM** and monitor the traffic in **Wireshark**.
     - Ex = ping www.google.com
 - Start a continuous ping from your **Windows 10 VM** to your **Ubuntu VM**.
     - Ex = ping 10.0.0.5 or www.google.com -t
