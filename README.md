@@ -10,14 +10,14 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Microsoft Azure (Virtual Machines)
 - RD Client (Remote Desktop)
 - Powershell
-- Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+- Various Network Protocols (ICMP, SSH, DNCP, DNS)
 - Wireshark (Protocol Analyzer)
 
 <h2>Operating Systems Used </h2>
 
 - macOS
 - Windows 10 Pro
-- Ubuntu Server 20.04
+- Ubuntu Server 22.04
 
 -----
 
