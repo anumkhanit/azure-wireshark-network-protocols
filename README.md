@@ -25,7 +25,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 - Create a Resource Group.
 - Create a **Windows 10 Virtual Machine (VM)** (with RDP Port) and assign it to the previously created Resource Group. Allow the VM to create a new Virtual Network (Vnet) and Subnet during setup.
-- Create a (Linux) **Ubuntu VM** (with SSH Port) and assign it to the same Resource Group and Vnet.
+- Create a (Linux) **Ubuntu 22.04 VM** (with SSH Port) and assign it to the same Resource Group and Vnet.
 - Observe the Virtual Network within Network Watcher.
 
 </br>
@@ -60,25 +60,26 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Filter for **SSH** traffic in **Wireshark**.
 - **SSH** into your **Ubuntu VM** from your **Windows 10 VM** using its private IP address.
 - Observe **SSH** traffic in **Wireshark** while typing commands.
+    - Ex = ssh (username)@(VM2 private address) - note: it'll ask for password, which will not show you what you type.
 - Exit the **SSH** connection by typing 'exit' and pressing [Enter].
 
 
 <h2>2.3 Observe DHCP Traffic</h2>
 
-- Filter for DHCP traffic in Wireshark.
-- From your Windows 10 VM, attempt to renew your VM's IP address using the command 'ipconfig /renew'.
-- Observe the DHCP traffic appearing in Wireshark.
+- Filter for **DHCP** traffic in **Wireshark**.
+- From your **Windows 10 VM**, attempt to renew your VM's IP address using the command [ipconfig /renew].
+- Observe the **DHCP** traffic appearing in **Wireshark**.
 
 <h2>2.4 Observe DNS Traffic</h2>
 
-- Filter for DNS traffic in Wireshark.
-- From your Windows 10 VM's command line, use 'nslookup' to query the IP addresses of 'google.com' and 'disney.com'.
-- Observe the DNS traffic in Wireshark.
+- Filter for **DNS** traffic in **Wireshark**.
+- From your **Windows 10 VM's** command line, use [nslookup] to query the IP addresses of 'google.com' and 'disney.com'.
+- Observe the **DNS** traffic in **Wireshark**.
 
 <h2>2.5 Observe RDP Traffic</h2>
 
-- Filter for RDP traffic in Wireshark (tcp.port == 3389).
-- Observe the constant stream of traffic. Why is the RDP traffic is continuous compared to other activities? Answer: RDP provides a continuous live stream from one computer to another, resulting in constant traffic transmission.
+- Filter for **RDP** traffic in **Wireshark** [tcp.port == 3389].
+- Observe the constant stream of traffic.
 
 </br>
 
