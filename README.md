@@ -3,30 +3,29 @@
 </p>
 
 <h1>Observing Network Traffic</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark and experiment with Network Security Groups. Some notes and screenshots are provided for highlights of some or all explanations.
+In this tutorial, let's observe various network traffic to and from Azure Virtual Machines with Wireshark and experiment with Network Security Groups. I've left notes and few screenshots are provided for highlights of some or all explanations.
 
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines)
-- RD Client (Remote Desktop)
-- Powershell
-- Various Network Protocols (ICMP, SSH, DNCP, DNS)
+- Microsoft RD Client (Remote Desktop)
+- Windows Powershell
+- Various Network Protocols (ICMP, SSH, DNCP, DNS, TCP Port ===)
 - Wireshark (Protocol Analyzer)
 
 <h2>Operating Systems Used </h2>
 
-- macOS
-- Windows 10 Pro
-- Ubuntu Server 22.04
+- macOS M1
+- Windows 10 Pro (Virtual Machine)
+- Ubuntu Server 22.04 (Virtual Machine)
 
 -----
 
-<h1>Part 1: Set Up Resources</h1>
+<h1>Part 1: Set Up Resources at Microsoft Azure</h1>
 
 - Create a Resource Group.
-- Create a **Windows 10 Virtual Machine (VM)** (with RDP Port) and assign it to the previously created Resource Group. Allow the VM to create a new Virtual Network (Vnet) and Subnet during setup.
-- Create a (Linux) **Ubuntu 22.04 VM** (with SSH Port) and assign it to the same Resource Group and Vnet.
-- Observe the Virtual Network within Network Watcher.
+- Create a **Windows 10 Virtual Machine (VM1)** (with RDP Port) and assign it to the Resource Group you've created. Allow the VM1 to create a new Virtual Network (Vnet) and Subnet during setup.
+- Create a VM2 **Ubuntu 22.04 VM** (with SSH Port) and assign it to the same Resource Group. Allow the VM2 to create another Vnet and Subnet during the setup.
 
 </br>
 
@@ -36,44 +35,43 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>2.1 Observe ICMP Traffic</h2>
 
-- Use **RD Client** to connect to your **Windows 10 Virtual Machine (VM)**.
-- Install **Wireshark** within your **Windows 10 VM**.
+- Use **Microsoft RD Client** to connect to your **Windows 10 Virtual Machine (VM1)** Public IP Address.
+- Install **Wireshark** within your **Windows 10 VM1**.
 - Open **Wireshark** and apply a filter for **ICMP** traffic.
-- Retrieve the **private IP address** of the **Ubuntu VM** and ping it from within the **Windows 10 VM**.
+- Retrieve the **private IP address** of the **Ubuntu VM2** and ping it from within the **Windows 10 VM1** in the **Windows Powershell**.
     - Ex = ping 10.0.0.5
 - Observe ping requests and replies in **Wireshark**.
-- Ping a public website from the **Windows 10 VM** and monitor the traffic in **Wireshark**.
+- Ping a public website from the **Windows 10 VM1** and monitor the traffic in **Wireshark**.
     - Ex = ping www.google.com
-- Start a continuous ping from your **Windows 10 VM** to your **Ubuntu VM**.
+- Start a continuous ping from your **Windows 10 V1M** to your **Ubuntu VM2**.
     - Ex = ping 10.0.0.5 or www.google.com -t
-- Disable incoming (inbound) ICMP traffic in the **Network Security Group** of your **Ubuntu VM** at **Microsoft Azure**.
-    - Ex = Deny ICMP with custom name: DENY_ICMP_PING_FROM_ANYWHERE
-- Observe the ICMP traffic in **Wireshark** and the command line Ping activity on the **Windows 10 VM**.
-- Re-enable ICMP traffic in the **Network Security Group** of your **Ubuntu VM**.
-    - Ex = Allow ICMP with the same custom name you've created previously.
-- Observe the ICMP traffic in **Wireshark** and verify that the ping starts working.
+- Disable incoming (inbound) **ICMP** traffic in the **Network Security Group** of your **Ubuntu VM2** at **Microsoft Azure**. This allows you to block the connection through the virtual internet server since you've created a firewall in **Ubuntu VM2**
+    - Ex = Deny **ICMP** with custom name: DENY_ICMP_PING_FROM_ANYWHERE
+- Observe the **ICMP** traffic in **Wireshark** and the command line ping activity on the **Windows 10 VM1**.
+- Re-enable **ICMP** traffic in the **Network Security Group** of your **Ubuntu VM2**. What this means is that you've disable the firewall and you allow the virtual interenet connection for two VMs to communicate.
+    - Ex = Allow **ICMP** with the same custom name you've created previously.
+- Observe the **ICMP** traffic in **Wireshark** and verify that the ping starts working.
 - Stop the ping activity.
     - Use keys [Cntl^ + C]
 
 <h2>2.2 Observe SSH Traffic</h2>
 
 - Filter for **SSH** traffic in **Wireshark**.
-- **SSH** into your **Ubuntu VM** from your **Windows 10 VM** using its private IP address.
+- **SSH** into your **Ubuntu VM2** private IP Address through your **Windows 10 VM1**.
 - Observe **SSH** traffic in **Wireshark** while typing commands.
     - Ex = ssh (username)@(VM2 private address) - note: it'll ask for password, which will not show you what you type.
 - Exit the **SSH** connection by typing 'exit' and pressing [Enter].
 
-
 <h2>2.3 Observe DHCP Traffic</h2>
 
 - Filter for **DHCP** traffic in **Wireshark**.
-- From your **Windows 10 VM**, attempt to renew your VM's IP address using the command [ipconfig /renew].
+- From your **Windows 10 VM1**, attempt to renew your VM's IP address using the command [ipconfig /renew].
 - Observe the **DHCP** traffic appearing in **Wireshark**.
 
 <h2>2.4 Observe DNS Traffic</h2>
 
 - Filter for **DNS** traffic in **Wireshark**.
-- From your **Windows 10 VM's** command line, use [nslookup] to query the IP addresses of 'google.com' and 'disney.com'.
+- From your **Windows 10 VM1's** command line, use [nslookup] to query the IP addresses of 'google.com' and 'disney.com'.
 - Observe the **DNS** traffic in **Wireshark**.
 
 <h2>2.5 Observe RDP Traffic</h2>
