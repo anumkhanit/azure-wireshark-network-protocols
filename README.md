@@ -23,6 +23,8 @@ In this tutorial, we'll explore how to observe various types of network traffic 
 
 <h1>Part 1: Set Up Resources at Microsoft Azure</h1>
 
+Before we begin, let's set up our Azure environment:
+
 - Create a Resource Group.
 - Create a **Windows 10 Virtual Machine (VM1)** (with RDP Port) and assign it to the Resource Group you've created. Allow the VM1 to create a new Virtual Network (Vnet) and Subnet during setup.
 - Create a VM2 **Ubuntu 22.04 VM** (with SSH Port) and assign it to the same Resource Group. Allow the VM2 to create another Vnet and Subnet during the setup.
@@ -33,7 +35,11 @@ In this tutorial, we'll explore how to observe various types of network traffic 
 
 <h1>Part 2: Observing Traffic Types</h1>
 
+Now that our Azure environment is set up, let's observe different types of network traffic using Wireshark:
+
 <h2>2.1 Observe ICMP Traffic</h2>
+
+ICMP (Internet Control Message Protocol) is used for diagnostic and control purposes. To observe ICMP traffic:
 
 - Use **Microsoft RD Client** to connect to your **Windows 10 Virtual Machine (VM1)** Public IP Address.
 - Install **Wireshark** within your **Windows 10 VM1**.
@@ -56,6 +62,8 @@ In this tutorial, we'll explore how to observe various types of network traffic 
 
 <h2>2.2 Observe SSH Traffic</h2>
 
+SSH (Secure Shell) is a protocol used for secure remote access. To observe SSH traffic:
+
 - Filter for **SSH** traffic in **Wireshark**.
 - **SSH** into your **Ubuntu VM2** private IP Address through your **Windows 10 VM1**.
 - Observe **SSH** traffic in **Wireshark** while typing commands.
@@ -64,17 +72,23 @@ In this tutorial, we'll explore how to observe various types of network traffic 
 
 <h2>2.3 Observe DHCP Traffic</h2>
 
+DHCP (Dynamic Host Configuration Protocol) is used for automatically assigning IP addresses. To observe DHCP traffic:
+
 - Filter for **DHCP** traffic in **Wireshark**.
 - From your **Windows 10 VM1**, attempt to renew your VM's IP address using the command [ipconfig /renew].
 - Observe the **DHCP** traffic appearing in **Wireshark**.
 
 <h2>2.4 Observe DNS Traffic</h2>
 
+DNS (Domain Name System) is used for translating domain names to IP addresses. To observe DNS traffic:
+
 - Filter for **DNS** traffic in **Wireshark**.
 - From your **Windows 10 VM1's** command line, use [nslookup] to query the IP addresses of 'google.com' and 'disney.com'.
 - Observe the **DNS** traffic in **Wireshark**.
 
 <h2>2.5 Observe RDP Traffic</h2>
+
+RDP (Remote Desktop Protocol) is used for remote desktop connections. To observe RDP traffic:
 
 - Filter for **RDP** traffic in **Wireshark** [tcp.port == 3389].
 - Observe the constant stream of traffic.
@@ -83,4 +97,4 @@ In this tutorial, we'll explore how to observe various types of network traffic 
 
 -----
 <h1>Conclusion</h1>
-In conclusion, we've gained a deeper understanding of various network protocols, security measures, and the influence of geographic locations on online experiences. This lab highlights the importance of monitoring and managing network traffic and recognizing its pivotal role in today's digital world.
+In conclusion, we've gained hands-on experience in observing various network protocols using Wireshark. We've learned how to use Wireshark to monitor ICMP, SSH, DHCP, DNS, and RDP traffic, and how Network Security Groups can impact network traffic. Monitoring network traffic is a critical skill for IT professionals, and Wireshark is a valuable tool for gaining insights into network communication.
