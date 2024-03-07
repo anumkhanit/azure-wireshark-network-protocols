@@ -1,5 +1,5 @@
 <p align="center">
-<img src="(https://i.imgur.com/Ua7udoS.png)" alt="Traffic Examination"/>
+<img src=(https://i.imgur.com/Ua7udoS.png) alt="Traffic Examination"/>
 </p>
 
 <h1>Observing Network Traffic</h1>
