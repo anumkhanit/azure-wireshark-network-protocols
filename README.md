@@ -3,7 +3,7 @@
 </p>
 
 <h1>Observing Network Traffic</h1>
-In this tutorial, let's observe various network traffic to and from Azure Virtual Machines with Wireshark and experiment with Network Security Groups. I've left notes and few screenshots are provided for highlights of some or all explanations.
+In this tutorial, we'll explore how to observe various types of network traffic to and from Azure Virtual Machines using Wireshark. We'll also experiment with Network Security Groups to understand their impact on network traffic.
 
 <h2>Environments and Technologies Used</h2>
 
