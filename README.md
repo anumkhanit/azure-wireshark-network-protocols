@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/a/tiUg5w6" alt="Wireshark"/>
+<img src="https://i.imgur.com/86g2yXV.jpeg" alt="Wireshark"/>
 </p>
 
 <h1>Using Wireshark to Monitor Network Traffic with Virtual Machines</h1>
