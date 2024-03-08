@@ -44,6 +44,10 @@ ICMP (Internet Control Message Protocol) is used for diagnostic and control purp
 - Use **Microsoft RD Client** to connect to your **Windows 10 Virtual Machine (VM1)** Public IP Address.
 - Install **Wireshark** within your **Windows 10 VM1**.
 - Open **Wireshark** and apply a filter for **ICMP** traffic.
+<p>
+<img src="https://imgur.com/a/GPBZ8UK" width="640" height="425">
+</p>
+
 - Retrieve the **private IP address** of the **Ubuntu VM2** and ping it from within the **Windows 10 VM1** in the **Windows Powershell**.
     - Ex = ping 10.0.0.5
 - Observe ping requests and replies in **Wireshark**.
