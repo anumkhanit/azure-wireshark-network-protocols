@@ -15,7 +15,7 @@ In this tutorial, we'll explore how to observe various types of network traffic 
 
 <h2>Operating Systems Used </h2>
 
-- macOS M1
+- macOS
 - Windows 10 Pro (Virtual Machine)
 - Ubuntu Server 22.04 (Virtual Machine)
 
