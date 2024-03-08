@@ -68,7 +68,8 @@ SSH (Secure Shell) is a protocol used for secure remote access. To observe SSH t
 - **SSH** into your **Ubuntu VM2** private IP Address through your **Windows 10 VM1**.
 - Observe **SSH** traffic in **Wireshark** while typing commands.
     - Ex = ssh (username)@(VM2 private address) - note: it'll ask for password, which will not show you what you type.
-- Exit the **SSH** connection by typing 'exit' and pressing [Enter].
+    - Note: If you know any **Linux Command**, that is when you begin testing out or trying something different to the connection.
+- Exit the **SSH** connection by typing 'exit' and press [Enter].
 
 <h2>2.3 Observe DHCP Traffic</h2>
 
