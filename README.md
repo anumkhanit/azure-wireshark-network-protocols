@@ -52,7 +52,7 @@ ICMP (Internet Control Message Protocol) is used for diagnostic and control purp
 - Start a continuous ping from your **Windows 10 V1M** to your **Ubuntu VM2**.
     - Ex = ping 10.0.0.5 or www.google.com -t
 - Disable incoming (inbound) **ICMP** traffic in the **Network Security Group** of your **Ubuntu VM2** at **Microsoft Azure**. This allows you to block the connection through the virtual internet server since you've created a firewall in **Ubuntu VM2**
-    - Ex = Deny **ICMP** with custom name: DENY_ICMP_PING_FROM_ANYWHERE
+    - Ex = Deny **ICMP** with custom name: DENY_ICMP_PING_FROM_ANYWHERE (or makeup anything)
 - Observe the **ICMP** traffic in **Wireshark** and the command line ping activity on the **Windows 10 VM1**.
 - Re-enable **ICMP** traffic in the **Network Security Group** of your **Ubuntu VM2**. What this means is that you've disable the firewall and you allow the virtual interenet connection for two VMs to communicate.
     - Ex = Allow **ICMP** with the same custom name you've created previously.
