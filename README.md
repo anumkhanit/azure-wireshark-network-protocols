@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
-<h1>Using Wireshark to Monitor Network Traffic with Virtual Machines</h1>
+<h1>Using Wireshark with Virtual Machines</h1>
 In this tutorial, we'll explore how to observe various types of network traffic to and from Azure Virtual Machines using Wireshark. We'll also experiment with Network Security Groups to understand their impact on network traffic.
 
 <h2>Environments and Technologies Used</h2>
