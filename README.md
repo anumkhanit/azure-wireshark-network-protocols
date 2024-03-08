@@ -44,13 +44,15 @@ ICMP (Internet Control Message Protocol) is used for diagnostic and control purp
 - Use **Microsoft RD Client** to connect to your **Windows 10 Virtual Machine (VM1)** Public IP Address.
 - Install **Wireshark** within your **Windows 10 VM1**.
 - Open **Wireshark** and apply a filter for **ICMP** traffic.
-<p>
-<img src="https://imgur.com/a/GPBZ8UK" width="640" height="425">
-</p>
+
+![image](https://github.com/anumkhanit/azure-wireshark-network-protocols/assets/144633389/c8b398f2-1665-4f33-9e61-0e9fb7f4171c)
 
 - Retrieve the **private IP address** of the **Ubuntu VM2** and ping it from within the **Windows 10 VM1** in the **Windows Powershell**.
     - Ex = ping 10.0.0.5
 - Observe ping requests and replies in **Wireshark**.
+
+![image](https://github.com/anumkhanit/azure-wireshark-network-protocols/assets/144633389/dce4384b-131a-4bbd-8d62-9cf7b9622c69)
+
 - Ping a public website from the **Windows 10 VM1** and monitor the traffic in **Wireshark**.
     - Ex = ping www.google.com
 - Start a continuous ping from your **Windows 10 V1M** to your **Ubuntu VM2**.
@@ -68,6 +70,8 @@ ICMP (Internet Control Message Protocol) is used for diagnostic and control purp
 
 SSH (Secure Shell) is a protocol used for secure remote access. To observe SSH traffic:
 
+![image](https://github.com/anumkhanit/azure-wireshark-network-protocols/assets/144633389/17a98314-937c-4742-9045-405c3d26c277)
+
 - Filter for **SSH** traffic in **Wireshark**.
 - **SSH** into your **Ubuntu VM2** private IP Address through your **Windows 10 VM1**.
 - Observe **SSH** traffic in **Wireshark** while typing commands.
@@ -79,6 +83,8 @@ SSH (Secure Shell) is a protocol used for secure remote access. To observe SSH t
 
 DHCP (Dynamic Host Configuration Protocol) is used for automatically assigning IP addresses. To observe DHCP traffic:
 
+![image](https://github.com/anumkhanit/azure-wireshark-network-protocols/assets/144633389/8108b737-3c6e-4a71-85ef-eb3f7e9f7147)
+
 - Filter for **DHCP** traffic in **Wireshark**.
 - From your **Windows 10 VM1**, attempt to renew your VM's IP address using the command [ipconfig /renew].
 - Observe the **DHCP** traffic appearing in **Wireshark**.
@@ -87,6 +93,8 @@ DHCP (Dynamic Host Configuration Protocol) is used for automatically assigning I
 
 DNS (Domain Name System) is used for translating domain names to IP addresses. To observe DNS traffic:
 
+![image](https://github.com/anumkhanit/azure-wireshark-network-protocols/assets/144633389/9a7574d9-be64-4044-b44e-86d294bde8c6)
+
 - Filter for **DNS** traffic in **Wireshark**.
 - From your **Windows 10 VM1's** command line, use [nslookup] to query the IP addresses of 'google.com' and 'disney.com'.
 - Observe the **DNS** traffic in **Wireshark**.
@@ -94,6 +102,8 @@ DNS (Domain Name System) is used for translating domain names to IP addresses. T
 <h2>2.5 Observe RDP Traffic</h2>
 
 RDP (Remote Desktop Protocol) is used for remote desktop connections. To observe RDP traffic:
+
+![image](https://github.com/anumkhanit/azure-wireshark-network-protocols/assets/144633389/a73a2417-b719-4e44-9077-806ac029f831)
 
 - Filter for **RDP** traffic in **Wireshark** [tcp.port == 3389].
 - Observe the constant stream of traffic.
