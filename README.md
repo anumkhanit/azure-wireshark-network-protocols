@@ -110,4 +110,4 @@
 
 Now that you've set up a Windows 10 and Ubuntu VM in Azure.
 
-You learned how to use Wireshark to monitor various types of network traffic and gained practical experience in observing ICMP, SSH, DHCP, DNS, and RDP traffic, which are essential skills for managing and troubleshooting network environments. Understanding these traffic types helps in diagnosing network issues, securing communications, and ensuring efficient network performance.
+You learned how to use Wireshark to monitor various types of network traffic and gained practical experience in observing ICMP, SSH, DHCP, DNS, and RDP traffic, which are essential skills for managing and troubleshooting network environments.
