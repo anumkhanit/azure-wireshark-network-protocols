@@ -49,16 +49,16 @@
    - Open Wireshark and set the filter to show only ICMP traffic.
 
 3. **Ping Ubuntu VM**:
-   - Find the private IP address of your Ubuntu VM from your Azure. (ex - 10.0.0.5)
+   - Find the private IP address of your Ubuntu VM from your Azure. (e.g. - `10.0.0.5`)
    - Open Powershell or Command Line on the Windows 10 VM.
-   - Ping this Private IP address from the Windows 10 VM and watch the traffic in Wireshark. (ex - ping 10.0.0.5)
+   - Ping this Private IP address from the Windows 10 VM and watch the traffic in Wireshark. (e.g. - `ping 10.0.0.5`)
 
 4. **Ping a Public Website**:
-   - In the Windows 10 VM, use the command line or PowerShell to ping a public website (e.g., www.google.com).
+   - In the Windows 10 VM, use the command line or PowerShell to ping a public website (e.g., `www.google.com`).
    - Observe the traffic in Wireshark.
 
 5. **Continuous Ping**:
-   - Start a continuous ping from Windows 10 VM to Ubuntu VM. (ex - ping 10.0.0.5 -t)
+   - Start a continuous ping from Windows 10 VM to Ubuntu VM. (e.g. - `ping 10.0.0.5 -t`)
 
 6. **Manage Network Security**:
    - Go to the Network Security Group (NSG) in the network settings for your Ubuntu VM
@@ -66,7 +66,7 @@
    - Change number of 310 to 290
    - Check Wireshark and command line or Powershell in Windows 10 VM for traffic changes.
    - Re-enable ICMP traffic in the NSG and verify that ping starts working again.
-   - Stop the ping activity. (ex of your keyboard keys - CMD + C)
+   - Stop the ping activity. (e.g. of your keyboard keys - CMD + C)
 
 ### SSH Traffic
 
@@ -74,7 +74,7 @@
    - In Wireshark, set the filter to show only SSH traffic.
 
 2. **SSH into Ubuntu VM**:
-   - From Windows 10 VM, connect to the Ubuntu VM via SSH using its private IP. (ex - ssh username@Private IP Address)
+   - From Windows 10 VM, connect to the Ubuntu VM via SSH using its private IP. (e.g. - `ssh username@Private IP Address`)
    - Type commands in the SSH session and observe the traffic in Wireshark.
 
 3. **Exit SSH Session**:
@@ -101,7 +101,7 @@
 ### RDP Traffic
 
 1. **Filter for RDP Traffic**:
-   - In Wireshark, set the filter to show RDP traffic (tcp.port == 3389).
+   - In Wireshark, set the filter to show RDP traffic (`tcp.port == 3389`).
 
 2. **Observe RDP Traffic**:
    - Note the constant stream of traffic. This happens because RDP continuously transmits a live stream between computers.
