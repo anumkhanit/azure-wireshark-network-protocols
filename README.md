@@ -23,18 +23,17 @@
 
 ## Part 1: Create and Configure Resources
 
-1. **Create a Resource Group**:
+1. **Create a Resource Group & Virtual Network**:
    - Go to your Azure portal and create a new Resource Group.
+   - Create a Virtual Network (Vnet)
 
 2. **Create a Windows 10 Virtual Machine (VM)**:
    - Select the Resource Group you created.
-   - Allow the creation of a new Virtual Network (VNet) and Subnet during VM setup.
+   - Create a Windows 10 VM.
+   - Choose the VNet you have created.
 
 3. **Create a Linux (Ubuntu) VM**:
    - Choose the same Resource Group and VNet as the Windows 10 VM.
-
-4. **Check Your Virtual Network**:
-   - Use Network Watcher to observe your Virtual Network.
   
 -----
 
@@ -46,25 +45,28 @@
    - Use Remote Desktop to access your Windows 10 VM.
 
 2. **Install and Use Wireshark**:
-   - Install Wireshark on the Windows 10 VM.
+   - Install Wireshark on the Windows 10 VM at your Azure.
    - Open Wireshark and set the filter to show only ICMP traffic.
 
 3. **Ping Ubuntu VM**:
-   - Find the private IP address of your Ubuntu VM.
-   - Ping this IP address from the Windows 10 VM and watch the traffic in Wireshark.
+   - Find the private IP address of your Ubuntu VM from your Azure. (ex - 10.0.0.5)
+   - Open Powershell or Command Line on the Windows 10 VM.
+   - Ping this Private IP address from the Windows 10 VM and watch the traffic in Wireshark. (ex - ping 10.0.0.5)
 
 4. **Ping a Public Website**:
    - In the Windows 10 VM, use the command line or PowerShell to ping a public website (e.g., www.google.com).
    - Observe the traffic in Wireshark.
 
 5. **Continuous Ping**:
-   - Start a continuous ping from Windows 10 VM to Ubuntu VM.
+   - Start a continuous ping from Windows 10 VM to Ubuntu VM. (ex - ping 10.0.0.5 -t)
 
 6. **Manage Network Security**:
-   - Go to the Network Security Group (NSG) for your Ubuntu VM and disable inbound ICMP traffic.
-   - Check Wireshark and command line in Windows 10 VM for traffic changes.
+   - Go to the Network Security Group (NSG) in the network settings for your Ubuntu VM
+   - Add inbound traffic rule of ICMP and choose Deny
+   - Change number of 310 to 290
+   - Check Wireshark and command line or Powershell in Windows 10 VM for traffic changes.
    - Re-enable ICMP traffic in the NSG and verify that ping starts working again.
-   - Stop the ping activity.
+   - Stop the ping activity. (ex of your keyboard keys - CMD + C)
 
 ### SSH Traffic
 
@@ -72,7 +74,7 @@
    - In Wireshark, set the filter to show only SSH traffic.
 
 2. **SSH into Ubuntu VM**:
-   - From Windows 10 VM, connect to the Ubuntu VM via SSH using its private IP.
+   - From Windows 10 VM, connect to the Ubuntu VM via SSH using its private IP. (ex - ssh username@Private IP Address)
    - Type commands in the SSH session and observe the traffic in Wireshark.
 
 3. **Exit SSH Session**:
@@ -93,7 +95,7 @@
    - In Wireshark, filter to show only DNS traffic.
 
 2. **Use nslookup**:
-   - From the Windows 10 VM command line, use `nslookup` to find IP addresses for `google.com` and `disney.com`.
+   - From the Windows 10 VM command line or Powershell, use `nslookup` to find IP addresses for `google.com` and `disney.com`.
    - Observe the DNS traffic in Wireshark.
 
 ### RDP Traffic
@@ -108,6 +110,6 @@
 
 ## Conclusion
 
-Now that you've set up a Windows 10 and Ubuntu VM in Azure.
+Now that you've learned how to use Wireshark to monitor various types of network traffic. 
 
-You learned how to use Wireshark to monitor various types of network traffic and gained practical experience in observing ICMP, SSH, DHCP, DNS, and RDP traffic, which are essential skills for managing and troubleshooting network environments.
+You have gained practical experience in observing ICMP, SSH, DHCP, DNS, and RDP traffic, which are an important skills for managing, troubleshooting, and undestanding the network environments.
