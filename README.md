@@ -78,7 +78,7 @@
    - Type commands in the SSH session and observe the traffic in Wireshark.
 
 3. **Exit SSH Session**:
-   - Type `exit` and press Enter to close the SSH connection.
+   - Type `exit` and press `enter` to close the SSH connection.
 
 ### DHCP Traffic
 
