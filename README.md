@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
-<h1>Using Wireshark with Microsoft Azure Virtual Machines</h1>
+<h1>Using Wireshark within Microsoft Azure Virtual Machines</h1>
 <p>This tutorial walks you through setting up Windows and Ubuntu VMs in Azure and using Wireshark to observe various types of network traffic. You’ll learn how to create and configure virtual machines, monitor ICMP, SSH, DHCP, DNS, and RDP traffic, and understand the behavior of each traffic type.</p>
 
 <h2>Environments and Technologies to use</h2>
