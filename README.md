@@ -10,7 +10,7 @@
 - Microsoft Azure (Virtual Machines)
 - Microsoft RD Client (Remote Desktop)
 - Windows Powershell
-- Various Network Protocols (ICMP, SSH, DNCP, DNS, TCP Port ===)
+- Various Network Protocols (ICMP, SSH, DHCP, DNS, TCP Port ===)
 - Wireshark (Protocol Analyzer)
 
 <h2>Operating Systems to use</h2>
