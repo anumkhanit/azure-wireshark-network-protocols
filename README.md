@@ -88,6 +88,7 @@
 2. **Renew IP Address**:
    - On Windows 10 VM, run `ipconfig /renew` to request a new IP address.
    - Observe the DHCP traffic in Wireshark.
+   - Use this link for a cheat sheet (with explanation) commands https://www.ninjaone.com/blog/ipconfig-commands/
 
 ### DNS Traffic
 
