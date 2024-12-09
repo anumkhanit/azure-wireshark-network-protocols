@@ -75,7 +75,7 @@
 
 2. **SSH into Ubuntu VM**:
    - From Windows 10 VM, connect to the Ubuntu VM via SSH using its private IP. (e.g. - `ssh username@Private IP Address`)
-   - Type commands in the SSH session and observe the traffic in Wireshark.
+   - Type commands in the SSH session and observe the traffic in Wireshark. Use this link for commands cheat sheet (for a study purpose) https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/
 
 3. **Exit SSH Session**:
    - Type `exit` and press `enter` to close the SSH connection.
