@@ -15,7 +15,7 @@
 
 <h2>Operating Systems to use</h2>
 
-- macOS Sonoma ***(if you own Macbook Air M1 or M2; it does not matter what type of macOS you own)***
+- macOS Sonoma ***(if you own Macbook Air M1 or M2; it does not matter what type of macOS you own, it'll work on remote desktop app)***
 - Windows 10 or Windows 11 Home or Pro ***(if you own either of these OS)***
 - Ubuntu Server 22.04 (Virtual Machine)
 
