@@ -98,6 +98,7 @@
 2. **Use nslookup**:
    - From the Windows 10 VM command line or Powershell, use `nslookup` to find IP addresses for `google.com` and `disney.com`.
    - Observe the DNS traffic in Wireshark.
+   - Use this link to learn more about the commands and use it for learning purpose: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc725991(v=ws.11)
 
 ### RDP Traffic
 
