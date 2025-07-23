@@ -3,7 +3,16 @@
 </p>
 
 <h1>Using Wireshark within Microsoft Azure Virtual Machines</h1>
-<p>This tutorial walks you through setting up Windows and Ubuntu VMs in Azure and using Wireshark to observe various types of network traffic. You’ll learn how to create and configure virtual machines, monitor ICMP, SSH, DHCP, DNS, and RDP traffic, and understand the behavior of each traffic type.</p>
+<p>In this tutorial, we will learn how to observe live network traffic in the cloud using Azure Virtual Machines and Wireshark. 
+   
+   This guide will walk you through setting up Windows and Ubuntu VMs in Azure and using Wireshark to observe various types of network traffic. You’ll learn how to create and configure virtual machines, monitor ICMP, SSH, DHCP, DNS, and RDP traffic, and understand the behavior of each traffic type.</p>
+
+<h2>What You’ll Learn:</h2>
+
+- Basics of cloud computing with Azure
+- How to capture network traffic using Wireshark
+- Understand protocols like ICMP, DNS, SSH, DHCP, RDP
+- How to interpret real-time network behavior and apply security rules
 
 <h2>Environments and Technologies to use</h2>
 
@@ -35,11 +44,17 @@
 3. **Create a Linux (Ubuntu) VM**:
    - Choose the same Resource Group and VNet as the Windows 10 VM.
   
+***📖 Note: A Resource Group organizes related Azure services, and a VNet allows your VMs to communicate like they’re on the same local network. You’ll use one VM (Windows) to generate and monitor traffic, and the other (Linux) to respond to it.***
+  
 -----
 
 ## Part 2: Observe Network Traffic
 
+***Wireshark is a free and powerful tool used to analyze packets and protocols on a network. It helps you see what’s happening behind the scenes.***
+
 ### ICMP Traffic
+
+***📖 Note: ICMP is the protocol used when you “ping” another device.***
 
 1. **Connect to Windows 10 VM**:
    - Use Remote Desktop to access your Windows 10 VM.
@@ -61,20 +76,22 @@
    - Start a continuous ping from Windows 10 VM to Ubuntu VM. (e.g. - `ping 10.0.0.5 -t`)
 
 6. **Manage Network Security**:
-   - Go to the Network Security Group (NSG) in the network settings for your Ubuntu VM
+   - Go to the Network Security Group (NSG) in the network settings for your Ubuntu VM --- ***((You’ll see how NSG (Network Security Group) rules in Azure control traffic.))***
    - Add inbound traffic rule of ICMP and choose Deny
-   - Change number of 310 to 290
+   - Change number of 310 to 290 --- ***((⛔ Now try pinging again from Windows VM — it should fail THEN Go back and re-enable ICMP (change action to Allow)))***
    - Check Wireshark and command line or Powershell in Windows 10 VM for traffic changes.
    - Re-enable ICMP traffic in the NSG and verify that ping starts working again.
    - Stop the ping activity. (e.g. of your keyboard keys - CMD + C)
 
+***📖 Note: Observe in Wireshark how traffic stops and resumes depending on NSG rules.***
+
 ### SSH Traffic
 
 1. **Filter for SSH Traffic**:
-   - In Wireshark, set the filter to show only SSH traffic.
+   - In Wireshark, set the filter to show only SSH traffic. (e.g. `tcp. port == 22`)
 
 2. **SSH into Ubuntu VM**:
-   - From Windows 10 VM, connect to the Ubuntu VM via SSH using its private IP. (e.g. - `ssh username@Private IP Address`)
+   - From Windows 10 VM, use the Windows Terminal or Powershell and connect to the Ubuntu VM via SSH using its private IP. (e.g. - `ssh username@Private IP Address`) 
    - Type commands in the SSH session and observe the traffic in Wireshark. Use this link for commands cheat sheet (for a study purpose) https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/
 
 3. **Exit SSH Session**:
@@ -89,6 +106,8 @@
    - On Windows 10 VM, run `ipconfig /renew` to request a new IP address.
    - Observe the DHCP traffic in Wireshark.
    - Use this link for a cheat sheet (with explanation) commands https://www.ninjaone.com/blog/ipconfig-commands/
+  
+***📖 Note: The purpose of this DHCP is that it assigns IP addresses automatically, perferably forcing a new request if done correctly. You'll notice that DHCP Discover, Offer, Request, and Acknowledge as known messages. For more information about the ipconfig commands blog post above***
 
 ### DNS Traffic
 
@@ -99,6 +118,8 @@
    - From the Windows 10 VM command line or Powershell, use `nslookup` to find IP addresses for `google.com` and `disney.com`.
    - Observe the DNS traffic in Wireshark.
    - Use this link to learn more about the commands and use it for learning purpose: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc725991(v=ws.11)
+  
+***📖 Note: DNS translates domain names (like google.com) into IP addresses.***
 
 ### RDP Traffic
 
@@ -108,10 +129,14 @@
 2. **Observe RDP Traffic**:
    - Note the constant stream of traffic. This happens because RDP continuously transmits a live stream between computers.
   
+***📖 Note: RDP is what you’re using to control the Windows VM.***
+  
 -----
 
 ## Conclusion
 
 Now that you've learned how to use Wireshark to monitor various types of network traffic. 
 
-You have gained practical experience in observing ICMP, SSH, DHCP, DNS, and RDP traffic, which are an important skills for managing, troubleshooting, and undestanding the network environments.
+You also should keep in mind that Azure is an example of Infrastructure as a Service (IaaS): You rent virtual machines and networks, including the benefits of cloud computing like scalability (which you can add/remove resources as needed), cost-efficiency (which you pay only for what you use), and accessibility (which you can access from anywhere). 
+
+You even gained practical experience in observing ICMP, SSH, DHCP, DNS, and RDP traffic, which are an important skills for managing, troubleshooting, and undestanding the network environments.
