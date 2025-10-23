@@ -71,8 +71,17 @@ This guide is beginner-friendly and great for students exploring network enginee
 - 💻 Install Wireshark
 
 	- On the Windows 10 VM, connect via Remote Desktop
+  <img width="1282" height="832" alt="Screenshot 2025-10-23 at 10 42 06 AM" src="https://github.com/user-attachments/assets/96ae2de5-42b7-4034-93b4-a2acfa26d9d0" />
+  
 	- Download Wireshark: `https://www.wireshark.org`
+  <img width="1920" height="1080" alt="Screenshot 2025-10-23 at 10 45 28 AM" src="https://github.com/user-attachments/assets/e7c73a25-ff30-4082-bbb2-28887f89c1c3" />
+  
 	- Launch Wireshark and start capturing on the Ethernet adapter
+  <img width="453" height="213" alt="Screenshot 2025-10-23 at 10 46 26 AM" src="https://github.com/user-attachments/assets/0ba90fab-5b60-441d-9031-e7f559c8a141" />
+  
+  <img width="542" height="243" alt="Screenshot 2025-10-23 at 10 45 40 AM" src="https://github.com/user-attachments/assets/d7c273f9-61c7-4396-abae-644b9fdf7561" />
+  
+  <img width="1920" height="1080" alt="Screenshot 2025-10-23 at 10 46 58 AM" src="https://github.com/user-attachments/assets/0d7d0924-1927-478b-84cb-46e20e0e3706" />
 
 -----
 
@@ -82,15 +91,18 @@ This guide is beginner-friendly and great for students exploring network enginee
 
 - Filter ICMP in Wireshark
    - Open Wireshark and set the filter to show only `icmp` traffic on the search bar.
+<img width="1919" height="1009" alt="Screenshot 2025-10-23 at 10 55 52 AM" src="https://github.com/user-attachments/assets/aadcaed1-b8f3-4669-b1c0-419c7e317593" />
 
 - Ping Ubuntu VM
    - Find the private IP address of your Ubuntu VM from your Azure. (e.g. - `10.0.0.5`)
    - Open Powershell or Command Line on the Windows 10 VM.
    - Ping this Private IP address from the Windows 10 VM and watch the traffic in Wireshark. (e.g. - `ping 10.0.0.5`)
+<img width="1919" height="547" alt="Screenshot 2025-10-23 at 10 57 28 AM" src="https://github.com/user-attachments/assets/a5e3c432-d0fc-4aa8-99e2-fe35153ad5a6" />
 
 - Ping a Public Website
    - In the Windows 10 VM, use the command line or PowerShell to ping a public website (e.g., `www.google.com`).
    - Observe the traffic in Wireshark.
+<img width="728" height="424" alt="Screenshot 2025-10-23 at 10 56 35 AM" src="https://github.com/user-attachments/assets/1f89628e-8bc2-45d8-b1e9-b735ce13d4a9" />
 
 - Continuous Ping
    - Start a continuous ping from Windows 10 VM to Ubuntu VM. (e.g. - `ping 10.0.0.5 -t`)
@@ -104,7 +116,7 @@ This guide is beginner-friendly and great for students exploring network enginee
 - Go to the Ubuntu VM > Networking > NSG
 
 - Add a new Inbound Rule:
-  - Protocol: `ICMP`
+  - Protocol: `ICMPv4`
   - Action:`Deny`
   - Priority: `290`
  
@@ -146,7 +158,9 @@ This guide is beginner-friendly and great for students exploring network enginee
    - On Windows 10 VM, run `ipconfig /renew` to request a new IP address.
    - Observe the DHCP traffic in Wireshark.
    - Use this link for a cheat sheet (with explanation) commands https://www.ninjaone.com/blog/ipconfig-commands/
-  
+ 
+<img width="1920" height="1080" alt="Screenshot 2025-10-23 at 11 14 34 AM" src="https://github.com/user-attachments/assets/e534c2d9-b28a-40f5-a0cc-970364e179ff" />
+
 ***📖 Note: The purpose of this DHCP is that it assigns IP addresses automatically, perferably forcing a new request if done correctly. You'll notice that DHCP Discover, Offer, Request, and Acknowledge as known messages. For more information about the ipconfig commands blog post above***
 
 -----
@@ -178,7 +192,9 @@ This guide is beginner-friendly and great for students exploring network enginee
 - Observe RDP Traffic
 
    - Note the constant stream of traffic. This happens because RDP continuously transmits a live stream between computers.
-  
+ 
+<img width="1920" height="1080" alt="Screenshot 2025-10-23 at 11 18 27 AM" src="https://github.com/user-attachments/assets/7304dce9-625b-4829-9ca1-33c83d82f2c3" />
+
 -----
 
 <h1>📘 What Is Cloud Computing?</h1>
