@@ -94,6 +94,8 @@ This guide is beginner-friendly and great for students exploring network enginee
 
 - Continuous Ping
    - Start a continuous ping from Windows 10 VM to Ubuntu VM. (e.g. - `ping 10.0.0.5 -t`)
+ 
+- 🛑 Stop the ping with `Ctrl + C`.
   
 -----
 
@@ -137,7 +139,7 @@ This guide is beginner-friendly and great for students exploring network enginee
 
 - Filter for DHCP Traffic
 
-   - In Wireshark, filter to show only DHCP traffic `bootp` on the search bar
+   - In Wireshark, filter to show only DHCP traffic on the search bar
 
 - Renew IP Address
 
