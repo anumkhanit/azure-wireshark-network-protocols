@@ -5,12 +5,11 @@
 <h1>🔎 Analyzing Network Traffic in Azure with Wireshark</h1>
 <p>Learn how to monitor and understand real-time network traffic in a cloud environment using Azure virtual machines and Wireshark.</p>
 
-<h1>🧠 Overview</h1>
+<h1>🧠 Overview (with Demo to follow)</h1>
    
-   <p>In this lab, you’ll create two Azure virtual machines—one Windows 10 and one Ubuntu Linux—within the same virtual network. You’ll use Wireshark on the Windows VM to analyze protocols such as ICMP, SSH, DNS, DHCP, and RDP. Along the way, you’ll also adjust Network Security Group (NSG) rules to observe how traffic is filtered in Azure.
+   <p>In this lab, you’ll create two Azure virtual machines—one Windows 10 and one Ubuntu Linux—within the same virtual network. You’ll use Wireshark on the Windows VM to analyze protocols such as ICMP, SSH, DNS, DHCP, and RDP. Along the way, you’ll also adjust Network Security Group (NSG) rules to observe how traffic is filtered in Azure. 
+	   This guide is beginner-friendly and great for students exploring network engineering, cloud computing, or cybersecurity fundamentals.</p>
 
-This guide is beginner-friendly and great for students exploring network engineering, cloud computing, or cybersecurity fundamentals.
-</p>
 
 <h2>What You’ll Learn:</h2>
 
