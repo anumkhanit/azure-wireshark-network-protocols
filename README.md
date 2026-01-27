@@ -70,9 +70,7 @@
 - 💻 Install Wireshark
 
 	- On the Windows 10 VM, connect via Remote Desktop
-  
 	- Download Wireshark: `https://www.wireshark.org`
-  
 	- Launch Wireshark and start capturing on the Ethernet adapter
 
 -----
